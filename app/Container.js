@@ -2,7 +2,7 @@ import React from 'react';
 import Topbar from './Topbar';
 import LeftSidebar from './LeftSidebar';
 
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard/Dashboard';
 
 export default class Container extends React.Component {
   constructor(props) {
@@ -16,6 +16,9 @@ export default class Container extends React.Component {
         <div className="row">
           <div className="col-md-12">
             <Topbar />
+          </div>
+          <div className="col-md-12">
+            <hr />
           </div>
           <div className="panel panel-default">
             <div className="panel-body">

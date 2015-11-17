@@ -48,25 +48,25 @@ export default class ReviewsGraph extends React.Component{
       <div className="panel panel-default">
         <div className="panel-body review-graph-holder"> 
           <div className="row">
-          <h4>Positive Reviews Graph</h4>
+            <h4>Positive Reviews Graph</h4>
             <div className="col-md-8 reivew-lineGraph">
               <Line data={this.state.dataLine} width="600" height="250"/>
             </div>
             <div className="col-md-4 reivew-pieGraph">
               <Pie data={this.state.dataPie} width="250" height="100"/>
             </div>
-        </div>
+          </div>
           <div className="row">
-          <h4>Negative Reviews Graph</h4>
+            <h4>Negative Reviews Graph</h4>
             <div className="col-md-8 reivew-lineGraph">
               <Line data={this.state.dataLine} width="600" height="250"/>
             </div>
             <div className="col-md-4 reivew-pieGraph">
               <Pie data={this.state.dataPie} width="250" height="100"/>
             </div>
+          </div>
         </div>
-      </div>
-    </div>  
-    )
+      </div>  
+    );
   };
 }
