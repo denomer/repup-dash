@@ -13,5 +13,4 @@ export default class FilteredReviews extends React.Component{
       <h1>Foo</h1>
     );
   }
-
 }
