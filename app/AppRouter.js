@@ -2,7 +2,7 @@ import React from 'react'
 import {Router,Route,Link,IndexRoute} from 'react-router'
 import Container from './Container'
 import Dashboard from './dashboard/Dashboard'
-import ReviewsGraph from './ReviewsGraph'
+import ReviewsGraph from './reviews/ReviewsGraph'
 import FilteredReviews from './FilteredReviews'
 import AnalysisView from './competitiveAnalysis/AnalysisView' 
 
