@@ -1,4 +1,4 @@
-import './style/bootstrap.yeti.min.css';
+import './style/bootstrap.min.css';
 import './style/spacing-classes.css';
 import './style/main.css';
 
