@@ -18,14 +18,14 @@ export default class Competitors extends React.Component{
                 {range(1,5).map(() => {
                   return (
                     <tr className="row">
-                      <td width="33%" className="col">Hotel 1</td>
-                      <td width="33%" className="col">
+                      <td width="33%" >Hotel 1</td>
+                      <td width="33%" >
                       <i className="glyphicon glyphicon-star"></i>
                       <i className="glyphicon glyphicon-star"></i>
                       <i className="glyphicon glyphicon-star"></i>
                       </td>
-                      <td width="33%" className="col">
-                      <button type="button" className="btn btn-default">View</button>
+                      <td width="33%" >
+                      <button className="btn btn-default btn-xs">view</button>
                       </td>
                     </tr>
                   );
