@@ -78,7 +78,7 @@ export default class AnalysisTabbedView extends React.Component {
                                 <td><h6>Total Reviews: 356</h6> </td>
                               </tr>
                               <tr>
-                                <td colspan="2">
+                                <td colSpan="2">
                                   <div className="progress">
                                     <div className="progress-bar progress-bar-success" style={style1} >
                                       <span>85%</span>
@@ -204,7 +204,7 @@ export default class AnalysisTabbedView extends React.Component {
                     </table>
                   </div>
                   <div className="panel-footer">
-                     <h6> Rank: 7.5  </h6> 
+                    <h6> Rank: 7.5  </h6> 
                   </div>
                 </div>
               </td>

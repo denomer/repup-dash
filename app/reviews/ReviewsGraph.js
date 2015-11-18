@@ -1,5 +1,6 @@
 import React from 'react';
 import {Line,Pie} from 'react-chartjs';
+import ReviewTimeline from './ReviewTimeline'
 
 export default class ReviewsGraph extends React.Component{
   constructor(props) {
@@ -25,19 +26,19 @@ export default class ReviewsGraph extends React.Component{
             value: 300,
             color:"#F7464A",
             highlight: "#FF5A5E",
-            label: "Red"
+            label: "TripAdvisor"
         },
         {
             value: 50,
             color: "#46BFBD",
             highlight: "#5AD3D1",
-            label: "Green"
+            label: "Agoda"
         },
         {
             value: 100,
             color: "#FDB45C",
             highlight: "#FFC870",
-            label: "Yellow"
+            label: "MakeMyTrip"
         }
       ]
     }
@@ -63,6 +64,11 @@ export default class ReviewsGraph extends React.Component{
             </div>
             <div className="col-md-4 reivew-pieGraph">
               <Pie data={this.state.dataPie} width="250" height="100"/>
+            </div>
+          </div>
+          <div className="panel panel-default">
+            <div className="panel-body">
+              <ReviewTimeline />
             </div>
           </div>
         </div>
