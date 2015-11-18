@@ -17,9 +17,7 @@ export default class Container extends React.Component {
           <div className="col-md-12">
             <Topbar />
           </div>
-          <div className="col-md-12">
-            <hr />
-          </div>
+          
           <div className="panel panel-default">
             <div className="panel-body">
               <div className="row">

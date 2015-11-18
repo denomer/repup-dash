@@ -24,16 +24,16 @@ export default class AnalysisTabbedView extends React.Component {
         <table className="table table-stripped table-border">
           <tbody>
             <tr>
-              <td><h3>Hilton Garden Inn Gurgaon</h3></td>
-            </tr>
-            <tr>
-              <td><h6>Sector 50, Gurgaon 122002, India</h6></td>
+              <td>
+                <h4>Hilton Garden Inn Gurgaon</h4>
+                <span className="text-muted">Sector 50, Gurgaon 122002, India</span>
+              </td>
             </tr>
             <tr>
               <td>
                   <div className="panel panel-default">
-                      <div className="panel-header">
-                        <h3>Tripadvisor</h3>
+                      <div className="panel-heading">
+                        <h5>Tripadvisor</h5>
                       </div>
                       <div className="panel-body">
                         <table className="table table-stripped" valign="center">

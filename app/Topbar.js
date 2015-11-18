@@ -5,10 +5,10 @@ export default class Topbar extends React.Component {
     super(props);
     this.state = {
       panels: [
-        {title: 'Hotel Name', subtitle: 'Hotel Address'},
+        {title: 'Galaxy Hotel & Spa', subtitle: 'Sector 15, Gurgaon'},
         {title: 'RepScore', subtitle: '68.25'},
-        {title: 'TripAdvisor', subtitle: '#541'},
-        {title: 'RankUp Reviews', subtitle: '7'}
+        {title: 'TripAdvisor', subtitle: '#541 of 204'},
+        {title: 'RankUp Reviews', subtitle: '7 (impact on RepScore +5.21)'}
       ]
     }
   }
@@ -18,12 +18,16 @@ export default class Topbar extends React.Component {
       <div className="container">
         <div className="row">
           {this.state.panels.map((panel) => {
-            return (
-              <div className="col-md-3">
-                <h3>{panel.title}</h3>
-                <span className="text-small">{panel.subtitle}</span>
+          return (
+            <div className="col-md-3">
+              <div className="panel panel-default">
+                <div className="panel-body">
+                  <h4>{panel.title}</h4>
+                  <span className="text-small">{panel.subtitle}</span>
+                </div>
               </div>
-            );
+            </div>
+          );
           })}
         </div>
       </div>

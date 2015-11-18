@@ -19,8 +19,8 @@ export default class Ota extends React.Component{
   render() {
     return(
         <div className="panel panel-default">
-          <div className="panel-body panel-body-table">
-            <div className="table">
+          <div className="panel-body">
+            <div className="table-responsive">
               <table className="table">
                 <tbody>
                   {this.state.hotelRatings.map((rating) => {
