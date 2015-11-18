@@ -9,7 +9,9 @@ export default class Ota extends React.Component{
         {ota: 'MakeMyTrip', score: 3},
         {ota: 'Expedia', score: 4},
         {ota: 'Goibibo', score: 2},
-        {ota: 'Booking', score: 5}
+        {ota: 'Booking', score: 5},
+        {ota: 'Tripadvisor', score: 5},
+        {ota: 'Agoda', score: 5}
       ]
     };
   }
@@ -18,8 +20,7 @@ export default class Ota extends React.Component{
     return(
         <div className="panel panel-default">
           <div className="panel-body panel-body-table">
-            <div className="table-responsive">
-              <h4>Ota Table</h4>
+            <div className="table">
               <table className="table">
                 <tbody>
                   {this.state.hotelRatings.map((rating) => {
