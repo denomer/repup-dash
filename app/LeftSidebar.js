@@ -18,7 +18,7 @@ export default class LeftSidebar extends React.Component {
           <li><a href="#" className="glyphicon glyphicon-arrow-up list-group-item"> RankUp</a></li>
           <li><a href="#" className="glyphicon glyphicon-plus list-group-item"> Sync-Accounts</a></li>
           <li><Link to="filtered-reviews" className="glyphicon glyphicon-filter list-group-item"> Filtered-Reviews</Link></li>
-        </ul>
+x        </ul>
       </div>
   );
   }
