@@ -63,31 +63,29 @@ function TripAdvisor({name}) {
       <h3>TripAdvisor</h3>
       {range(0,5).map(()=>{
         return (
-          <div className="row">
-            <div className="panel panel-default">
-              <div className="panel-body">
-                <div className="col-md-11">
-                  nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+          <div className="panel panel-default">
+            <div className="panel-body">
+              <div className="col-md-11">
+                nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjlasdsdsadasdasdasdasdasd
+              </div>
+              <div className="col-md-1">
+              {createElement(dropdown((props) => (
+                <div className={props.dropdownClass('dropdown clearfix')}>
+                  <a href="#" onClick={props.toggleDropdown} data-control>
+                    <i className="glyphicon glyphicon-triangle-bottom"></i>
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Reply</a></li>
+                    <li><a href="#">Raise Ticket </a></li>
+                    <li><a href="#">Post on Facebook</a></li>
+                    <li><a href="#">Post on Twitter</a></li>
+                  </ul>
                 </div>
-                <div className="col-md-1">
-                {createElement(dropdown((props) => (
-                  <div className={props.dropdownClass('dropdown clearfix')}>
-                    <a href="#" onClick={props.toggleDropdown} data-control>
-                      <i className="glyphicon glyphicon-triangle-bottom"></i>
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Reply</a></li>
-                      <li><a href="#">Raise Ticket </a></li>
-                      <li><a href="#">Post on Facebook</a></li>
-                      <li><a href="#">Post on Twitter</a></li>
-                    </ul>
-                  </div>
-                )))}
-                </div>
+              )))}
               </div>
             </div>
-          </div>  
-          );
+          </div>
+        );
       })}
     </div>
   );
@@ -99,31 +97,29 @@ function Booking({name}) {
       <h3>Booking</h3>
       {range(0,5).map(()=>{
         return (
-          <div className="row">
-            <div className="panel panel-default">
-              <div className="panel-body">
-                <div className="col-md-11">
-                  nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+          <div className="panel panel-default">
+            <div className="panel-body">
+              <div className="col-md-11">
+                nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+              </div>
+              <div className="col-md-1">
+              {createElement(dropdown((props) => (
+                <div className={props.dropdownClass('dropdown clearfix')}>
+                  <a href="#" onClick={props.toggleDropdown} data-control>
+                    <i className="glyphicon glyphicon-triangle-bottom"></i>
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Reply</a></li>
+                    <li><a href="#">Raise Ticket </a></li>
+                    <li><a href="#">Post on Facebook</a></li>
+                    <li><a href="#">Post on Twitter</a></li>
+                  </ul>
                 </div>
-                <div className="col-md-1">
-                {createElement(dropdown((props) => (
-                  <div className={props.dropdownClass('dropdown clearfix')}>
-                    <a href="#" onClick={props.toggleDropdown} data-control>
-                      <i className="glyphicon glyphicon-triangle-bottom"></i>
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Reply</a></li>
-                      <li><a href="#">Raise Ticket </a></li>
-                      <li><a href="#">Post on Facebook</a></li>
-                      <li><a href="#">Post on Twitter</a></li>
-                    </ul>
-                  </div>
-                )))}
-                </div>
+              )))}
               </div>
             </div>
-          </div>  
-          );
+          </div>
+        );
       })}
     </div>
   );
@@ -135,31 +131,29 @@ function Expedia({name}) {
       <h3>Expedia</h3>
       {range(0,5).map(()=>{
         return (
-          <div className="row">
-            <div className="panel panel-default">
-              <div className="panel-body">
-                <div className="col-md-11">
-                  nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+          <div className="panel panel-default">
+            <div className="panel-body">
+              <div className="col-md-11">
+                nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+              </div>
+              <div className="col-md-1">
+              {createElement(dropdown((props) => (
+                <div className={props.dropdownClass('dropdown clearfix')}>
+                  <a href="#" onClick={props.toggleDropdown} data-control>
+                    <i className="glyphicon glyphicon-triangle-bottom"></i>
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Reply</a></li>
+                    <li><a href="#">Raise Ticket </a></li>
+                    <li><a href="#">Post on Facebook</a></li>
+                    <li><a href="#">Post on Twitter</a></li>
+                  </ul>
                 </div>
-                <div className="col-md-1">
-                {createElement(dropdown((props) => (
-                  <div className={props.dropdownClass('dropdown clearfix')}>
-                    <a href="#" onClick={props.toggleDropdown} data-control>
-                      <i className="glyphicon glyphicon-triangle-bottom"></i>
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Reply</a></li>
-                      <li><a href="#">Raise Ticket </a></li>
-                      <li><a href="#">Post on Facebook</a></li>
-                      <li><a href="#">Post on Twitter</a></li>
-                    </ul>
-                  </div>
-                )))}
-                </div>
+              )))}
               </div>
             </div>
-          </div>  
-          );
+          </div>
+        );
       })}
     </div>
   );
@@ -171,31 +165,29 @@ function MakeMyTrip({name}) {
       <h3>MakeMyTrip</h3>
       {range(0,5).map(()=>{
         return (
-          <div className="row">
-            <div className="panel panel-default">
-              <div className="panel-body">
-                <div className="col-md-11">
-                  nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+          <div className="panel panel-default">
+            <div className="panel-body">
+              <div className="col-md-11">
+                nkjadsadndndnkjadjsdklsdsabldsdbjsadjsdjsdasjdsdasdbjsdjasdlsdlsdadsldsdlasdjl
+              </div>
+              <div className="col-md-1">
+              {createElement(dropdown((props) => (
+                <div className={props.dropdownClass('dropdown clearfix')}>
+                  <a href="#" onClick={props.toggleDropdown} data-control>
+                    <i className="glyphicon glyphicon-triangle-bottom"></i>
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Reply</a></li>
+                    <li><a href="#">Raise Ticket </a></li>
+                    <li><a href="#">Post on Facebook</a></li>
+                    <li><a href="#">Post on Twitter</a></li>
+                  </ul>
                 </div>
-                <div className="col-md-1">
-                {createElement(dropdown((props) => (
-                  <div className={props.dropdownClass('dropdown clearfix')}>
-                    <a href="#" onClick={props.toggleDropdown} data-control>
-                      <i className="glyphicon glyphicon-triangle-bottom"></i>
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Reply</a></li>
-                      <li><a href="#">Raise Ticket </a></li>
-                      <li><a href="#">Post on Facebook</a></li>
-                      <li><a href="#">Post on Twitter</a></li>
-                    </ul>
-                  </div>
-                )))}
-                </div>
+              )))}
               </div>
             </div>
-          </div>  
-          );
+          </div>
+        );
       })}
     </div>
   );
