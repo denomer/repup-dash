@@ -7,3 +7,13 @@
   font-size: 16px;
   color: orange;
 }
+
+.review-graph {
+  position: relative;
+}
+
+.review-piegraph {
+  position: absolute;
+  top: 0px;
+  left: 320px;
+}
