@@ -1,5 +1,5 @@
 import React from 'react';
-import {range} from '../../util';
+import {range} from 'lodash';
 
 export default class Ota extends React.Component {
   constructor(props) {

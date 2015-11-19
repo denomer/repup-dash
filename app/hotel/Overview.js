@@ -1,8 +1,8 @@
 import React from 'react';
-import Ota from './components/Ota';
-import Competitors from './components/Competitors';
-import ReviewHighlights from './components/ReviewHighlights';
-import NegativeReview from './components/NegativeReview';
+import Ota from './overview/Ota';
+import Competitors from './overview/Competitors';
+import ReviewHighlights from './overview/ReviewHighlights';
+import NegativeReview from './overview/NegativeReview';
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -16,24 +16,24 @@ export default class Dashboard extends React.Component {
         <div className="col-md-8">
           <div className="row">
             <div className="col-md-12">
-              <NegativeReview name="NegativeReview"/>
+              <NegativeReview />
             </div>
           </div>
           <div className="row">
             <div className="col-md-12">
-              <ReviewHighlights name="ReviewHighlights"/>
+              <ReviewHighlights />
             </div>
           </div>
         </div>
         <div className="col-md-4">
           <div className="row">
             <div className="col-md-12">
-              <Ota name="Ota"/>
+              <Ota />
             </div>
           </div>
           <div className="row">
             <div className="col-md-12">
-              <Competitors name="Competitors"/>
+              <Competitors />
             </div>
           </div>
         </div>

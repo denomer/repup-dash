@@ -1,7 +1,8 @@
 import React from 'react';
-import AnalysisTabelView from './AnalysisTableView';
-import AnalysisTabbedView from './AnalysisTabbedView.js';
-import data from './data';
+
+import Table from './competitiveAnalysis/Table';
+import Tabs from './competitiveAnalysis/Tabs';
+import data from './competitiveAnalysis/data';
 
 export default class AnalysisView extends React.Component {
   constructor(props) {
@@ -15,11 +16,11 @@ export default class AnalysisView extends React.Component {
     return (
       <div className="row">
         <div className="col-lg-12">
-          <AnalysisTabelView analysisData={this.state.competitiveAnalysis} />
+          <Table analysisData={this.state.competitiveAnalysis} />
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <AnalysisTabbedView analysisData={this.state.competitiveAnalysis} />
+            <Tabs analysisData={this.state.competitiveAnalysis} />
           </div>
         </div>
       </div>

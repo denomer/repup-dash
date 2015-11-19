@@ -1,5 +1,6 @@
 import React from 'react';
-import {dropdown} from 'app/util';
+import {createElement} from 'react';
+import dropdown from 'app/util/hoc/dropdown';
 
 export default class ReviewHighlights extends React.Component {
   constructor(props) {
@@ -58,21 +59,17 @@ export default class ReviewHighlights extends React.Component {
                       {content.keyword}
                       </td>
                       <td width="1%" className="col">
-                        {(() => {
-                          const Dropdown = dropdown((props) => (
-                            <div className={props.dropdownClass()}>
-                              <a href="#" onClick={props.toggleDropdown} data-control>
-                                <i className="glyphicon glyphicon-triangle-bottom"></i>
-                              </a>
-                              <ul className="dropdown-menu dropdown-menu-right">
-                                <li><a href="#">View</a></li>
-                                <li><a href="#">Report </a></li>
-                              </ul>
-                            </div>
-                          ));
-
-                          return <Dropdown />;
-                        })()}
+                        {createElement(dropdown((props) => (
+                          <div className={props.dropdownClass('dropdown clearfix')}>
+                            <a href="#" onClick={props.toggleDropdown} data-control>
+                              <i className="glyphicon glyphicon-triangle-bottom"></i>
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-right">
+                              <li><a href="#">View</a></li>
+                              <li><a href="#">Report </a></li>
+                            </ul>
+                          </div>
+                        )))}
                       </td>
                     </tr>
                   );

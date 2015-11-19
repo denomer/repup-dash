@@ -1,5 +1,5 @@
 import React from 'react';
-import {range} from '../util';
+import {range} from 'lodash';
 
 export default class ReviewTimeline extends React.Component {
   constructor(props) {
@@ -100,7 +100,7 @@ export default class ReviewTimeline extends React.Component {
                         </div>
                       </div>
                     </div>
-                  </div>                  
+                  </div>
                 );
               })}
             </div>

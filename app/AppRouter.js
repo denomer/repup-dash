@@ -1,10 +1,5 @@
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
-import Container from './Container';
-import Dashboard from './dashboard/Dashboard';
-import ReviewsGraph from './reviews/ReviewsGraph';
-import AnalysisView from './competitiveAnalysis/AnalysisView';
-import Login from './auth/Login';
 
 export default class AppRouter extends React.Component {
   constructor(props) {
@@ -16,10 +11,13 @@ export default class AppRouter extends React.Component {
     return (
       <Router>
         <Route path="/" component={Container}>
-          <IndexRoute component={Dashboard}/>
-          <Route path="review-graph" component={ReviewsGraph}/>
-          <Route path="competitive-analysis" component={AnalysisView}/>
+          <IndexRoute component={GroupOverview}/>
           <Route path="login" component={Login}/>
+          <Route path=":hotelId">
+            <Route path="dashboard" component={Dashboard}/>
+            <Route path="review-graph" component={ReviewsGraph}/>
+            <Route path="competitive-analysis" component={AnalysisView}/>
+          </Route>
         </Route>
       </Router>
     );

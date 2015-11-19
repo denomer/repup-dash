@@ -1,18 +1,5 @@
 import React from 'react';
-import {findDOMNode} from 'react-dom';
-
-export function range(start, end) {
-  const arr = [];
-  for (let i=start; i<end; i=i+1) {
-    arr.push(i);
-  }
-
-  return arr;
-}
-
-export function as(T) {
-  return (...traits) => traits.reverse().reduce((T, M) => M(T), T);
-}
+import {findDOMNode} from 'react';
 
 export function dropdown(Component) {
   return class extends React.Component {
@@ -46,10 +33,11 @@ export function dropdown(Component) {
       }
 
       document.removeEventListener('click', this.activeListener);
+      this.activeListener = null;
     }
 
-    dropdownClass() {
-      return this.state.open ? 'dropdown clearfix open' : 'dropdown clearfix';
+    dropdownClass(prefix) {
+      return this.state.open ? `${prefix} open` : prefix;
     }
 
     toggleDropdown(ev) {

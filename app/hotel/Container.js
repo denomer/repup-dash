@@ -1,6 +1,6 @@
 import React from 'react';
-import Topbar from './Topbar';
-import LeftSidebar from './LeftSidebar';
+import Topbar from './common/Topbar';
+import LeftSidebar from './common/LeftSidebar';
 
 export default class Container extends React.Component {
   constructor(props) {
