@@ -44,8 +44,8 @@ export default class ReviewHighlights extends React.Component {
                 {this.state.data.map((content)=>{
                   return (
                     <tr className="row">
-                      <td width="33%" className="col">{content.title}</td>
-                      <td width="33%" className="col">
+                      <td width="40%" className="col">{content.title}</td>
+                      <td width="60%" className="col">
                         <div className="progress">
                           <div className={generateBarClass(content.value)}
                               role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
@@ -54,22 +54,6 @@ export default class ReviewHighlights extends React.Component {
                             {content.value}%
                           </div>
                         </div>
-                      </td>
-                      <td width="33%" className="col">
-                      {content.keyword}
-                      </td>
-                      <td width="1%" className="col">
-                        {createElement(dropdown((props) => (
-                          <div className={props.dropdownClass('dropdown clearfix')}>
-                            <a href="#" onClick={props.toggleDropdown} data-control>
-                              <i className="glyphicon glyphicon-triangle-bottom"></i>
-                            </a>
-                            <ul className="dropdown-menu dropdown-menu-right">
-                              <li><a href="#">View</a></li>
-                              <li><a href="#">Report </a></li>
-                            </ul>
-                          </div>
-                        )))}
                       </td>
                     </tr>
                   );
