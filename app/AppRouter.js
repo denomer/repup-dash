@@ -22,7 +22,7 @@ export default class AppRouter extends React.Component {
         <Route path="/login" component={Login}/>
 
         <Route path="/:hotelId" component={HotelContainer}>
-          <IndexRoute component={HotelReviews} />
+            <IndexRoute component={HotelOverview} />
         </Route>
 
         <Route path="/" component={GroupContainer}>

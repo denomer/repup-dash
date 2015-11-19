@@ -7,14 +7,10 @@ export default class NegativeReview extends React.Component {
     super(props);
     this.state = {
       negtiveReview: [
-        {title: 'Poor Wifi', reviewCount: 3},
-        {title: 'Rude Staff', reviewCount: 4},
-        {title: 'Bad Food', reviewCount: 13},
-        {title: 'slow internet', reviewCount: 5},
-        {title: 'dirty towel', reviewCount: 2},
-        {title: 'tasteless food', reviewCount: 12},
-        {title: 'dirty floor', reviewCount: 7},
-        {title: 'no parking', reviewCount: 3}
+        {title: 'Room Amenities and Experience', reviewCount: 3,changed:'5'},
+        {title: 'Washrooms', reviewCount: 4,changed:'-5'},
+        {title: 'Restaurant', reviewCount: 13,changed:'2'},
+        {title: 'Internet', reviewCount: 5,changed:'-7'}
       ]
     };
   }
@@ -22,18 +18,32 @@ export default class NegativeReview extends React.Component {
   render() {
     return (
       <div className="panel panel-default">
-        <div className="panel-body panel-body-table">
+        <div className="panel-body">
           <h4>Top Negative Reviews</h4>
           {this.state.negtiveReview.map((reviews)=>{
             return createElement(dropdown((props) => (
-              <div className={props.dropdownClass('btn-group')}>
-                <button onClick={props.toggleDropdown} className="btn btn-danger btn-xs" data-control>
-                  {reviews.title} <span className="badge"> {reviews.reviewCount}</span> <i className="caret"></i>
-                </button>
-                <ul className="dropdown-menu">
-                  <li><a href="#">View</a></li>
-                  <li><a href="#">Report</a></li>
-                </ul>
+              <div className="col-md-4">
+                <div className="panel panel-default">
+                  <div className="panel-body">
+                    <div className="row">
+                      <div className="col-md-9 text-danger">{reviews.title}</div>
+                      <div className="col-md-3">{reviews.reviewCount}</div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-12">
+                        <div className={props.dropdownClass('pull-right')}>
+                          
+                            <i onClick={props.toggleDropdown}  className="caret"  data-control></i>
+                          
+                          <ul className="dropdown-menu">
+                            <li><a href="#">View</a></li>
+                            <li><a href="#">Report</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )));
           })}
