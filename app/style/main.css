@@ -1,0 +1,22 @@
+
+.btn-group
+{
+    margin: 5px;
+    letter-spacing:1.5px;
+}
+.glyphicon-star
+{
+    font-size: 16px;
+    color: orange;
+}
+
+/*graph css */
+.review-graph{
+	position: relative;
+}
+.review-piegraph{
+	position: absolute;
+	top: 0;
+	left: 320px;
+
+}
