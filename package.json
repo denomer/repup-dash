@@ -28,12 +28,12 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "browser-request": "^0.3.3",
     "chart.js": "^1.0.2",
     "lodash": "^3.10.1",
     "react": "^0.14.2",
     "react-bootstrap": "^0.27.3",
     "react-chartjs": "^0.6.0",
-    "react-dom": "^0.14.2",
-    "whatwg-fetch": "^0.10.1"
+    "react-dom": "^0.14.2"
   }
 }

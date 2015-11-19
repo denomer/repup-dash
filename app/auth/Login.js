@@ -6,7 +6,7 @@ export default class Login extends React.Component {
 
     this.state = {
       hasErrors: false
-    }
+    };
   }
 
   attemptLogin(ev) {
@@ -16,9 +16,8 @@ export default class Login extends React.Component {
 
     const data = {
       username: this.refs.username.value,
-      password: this.refs.password.value,
+      password: this.refs.password.value
     };
-
 
   }
 
@@ -51,7 +50,7 @@ export default class Login extends React.Component {
                 } else {
                   return <span></span>;
                 }
-              })}
+              })()}
             </div>
           </div>
         </div>

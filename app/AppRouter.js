@@ -6,6 +6,7 @@ import GroupOverview from './group/Overview';
 
 import HotelContainer from './hotel/Container';
 import HotelOverview from './hotel/Overview';
+import HotelReviews from './hotel/Reviews';
 
 import Login from './auth/Login';
 
@@ -21,7 +22,7 @@ export default class AppRouter extends React.Component {
         <Route path="/login" component={Login}/>
 
         <Route path="/:hotelId" component={HotelContainer}>
-          <Route path="" component={HotelOverview} />
+          <IndexRoute component={HotelReviews} />
         </Route>
 
         <Route path="/" component={GroupContainer}>

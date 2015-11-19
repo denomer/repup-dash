@@ -24,7 +24,7 @@ export default class ReviewHighlights extends React.Component {
   }
 
   render() {
-    const generateBarClass = (value)=>{
+    const generateBarClass = (value) => {
       if (value>=75) {
         return 'progress-bar progress-bar-success';
       } else if (value<75 && value>=60) {
