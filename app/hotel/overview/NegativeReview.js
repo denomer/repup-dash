@@ -7,7 +7,6 @@ export default class NegativeReview extends React.Component {
     super(props);
     this.state = {
       negtiveReview: [
-        {title: 'Room Amenities and Experience', reviewCount: 3,changed:'5'},
         {title: 'Washrooms', reviewCount: 4,changed:'-5'},
         {title: 'Restaurant', reviewCount: 13,changed:'2'},
         {title: 'Internet', reviewCount: 5,changed:'-7'}
@@ -30,14 +29,17 @@ export default class NegativeReview extends React.Component {
                       <div className="col-md-3">{reviews.reviewCount}</div>
                     </div>
                     <div className="row">
-                      <div className="col-md-12">
+                      <div className="col-md-9">
+                      <span className={arrowStyleNegativeReviews(reviews.changed)}></span>{reviews.changed}%
+                      </div>
+                      <div className="col-md-3">
                         <div className={props.dropdownClass('pull-right')}>
-                          
-                            <i onClick={props.toggleDropdown}  className="caret"  data-control></i>
-                          
+                          <button onClick={props.toggleDropdown} className="btn btn-default btn-xs" data-control>
+                            <i className="caret"></i>
+                          </button>
                           <ul className="dropdown-menu">
-                            <li><a href="#">View</a></li>
-                            <li><a href="#">Report</a></li>
+                            <li><a href="#">View Reviews</a></li>
+                            <li><a href="#">Generate Ticket</a></li>
                           </ul>
                         </div>
                       </div>
@@ -51,4 +53,12 @@ export default class NegativeReview extends React.Component {
       </div>
     );
   }
+}
+
+function arrowStyleNegativeReviews(value){
+  if(value>0)
+    return 'glyphicon glyphicon-arrow-up text-danger';
+  else
+    return 'glyphicon glyphicon-arrow-down text-success';
+  
 }

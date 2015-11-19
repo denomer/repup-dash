@@ -16,20 +16,25 @@ export default class Competitors extends React.Component {
             <table className="table">
               <tbody>
                 {range(1, 5).map(() => {
-                  return (
+                  return [
                     <tr className="row">
-                      <td width="33%" >Hotel 1</td>
-                      <td width="33%" >
-                      <i className="glyphicon glyphicon-star"></i>
-                      <i className="glyphicon glyphicon-star"></i>
-                      <i className="glyphicon glyphicon-star"></i>
+                      <td width="" >Hotel 1</td>
+                    </tr>,
+                    <tr>
+                      <td width="" >
+                        <i className="glyphicon glyphicon-star"></i>
+                        <i className="glyphicon glyphicon-star"></i>
+                        <i className="glyphicon glyphicon-star"></i>
                       </td>
-                      <td width="33%" >
-                      <button className="btn btn-default btn-xs">view</button>
+                      <td>
+                        #27
+                      </td>
+                      <td width="" >
+                        <button className="btn btn-default btn-xs">view</button>
                       </td>
                     </tr>
-                  );
-                })}
+                  ];
+                }).reduce((allTds, tds) => { return allTds.concat(tds); }, [])}
                </tbody>
             </table>
           </div>

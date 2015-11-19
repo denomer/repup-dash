@@ -51,7 +51,7 @@ function ScorePanel(props){
           <div className="col-md-12">
              <h3>
               <span className={scoreStyle(props.panel.score)}>{props.panel.score}</span>
-              <span className="pull-right"><i className={arrowStyle(props.panel.changed)}></i>{Math.abs(props.panel.changed)}%</span>
+              <span className="pull-right"><i className={arrowStyle(props.panel.changed)}></i>{props.panel.changed}%</span>
             </h3>
           </div>
           <div className="col-md-12">
@@ -70,7 +70,7 @@ function TripadvisorPanel(props){
           <div className="col-md-12">
              <h3>
               <span className="pull-left">#{props.panel.tripadvisorRank}</span>
-              <span className="pull-right"><i className={arrowStyle(props.panel.tripadvisorRankChanged)}></i>{Math.abs(props.panel.tripadvisorRankChanged)}</span>
+              <span className="pull-right"><i className={arrowStyle(props.panel.tripadvisorRankChanged)}></i>{props.panel.tripadvisorRankChanged}</span>
             </h3>
           </div>
           <div className="col-md-12">
@@ -89,7 +89,7 @@ function PositiveReviewsPanel(props){
           <div className="col-md-12">
              <h3>
               <span className="pull-left">{props.panel.positiveReviews}</span>
-              <span className="pull-right"><i className={arrowStyle(props.panel.changed)}></i>{Math.abs(props.panel.changed)}%</span>
+              <span className="pull-right"><i className={arrowStyle(props.panel.changed)}></i>{props.panel.changed}%</span>
             </h3>
           </div>
           <div className="col-md-12">
@@ -108,7 +108,7 @@ function NegativeReviewsPanel(props){
           <div className="col-md-12">
              <h3>
               <span className="pull-left">{props.panel.negativeReviews}</span>
-              <span className="pull-right"><i className={arrowStyleNegativeReviews(props.panel.changed)}></i>{Math.abs(props.panel.changed)}%</span>
+              <span className="pull-right"><i className={arrowStyleNegativeReviews(props.panel.changed)}></i>{props.panel.changed}%</span>
             </h3>
           </div>
           <div className="col-md-12">
