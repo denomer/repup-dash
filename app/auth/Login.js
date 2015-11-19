@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default class Login extends React.Component{
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
   }
-  render(){
+
+  render() {
     return (
       <div className="container">
         <div className="row">

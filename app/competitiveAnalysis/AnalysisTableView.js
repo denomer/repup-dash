@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-
-export default class AnalysisTabelView extends React.Component {   
+export default class AnalysisTableView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -43,4 +42,4 @@ export default class AnalysisTabelView extends React.Component {
       </table>
     );
   }
-} 
+}

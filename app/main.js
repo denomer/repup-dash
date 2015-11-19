@@ -8,5 +8,5 @@ import AppRouter from './AppRouter';
 
 ReactDOM.render(
   <AppRouter />,
-  document.querySelector('main') 
+  document.querySelector('main')
 );
