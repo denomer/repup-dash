@@ -10,7 +10,7 @@ export default class Topbar extends React.Component {
         {title: 'TripAdvisor', subtitle: '#541 of 204'},
         {title: 'RankUp Reviews', subtitle: '7 (impact on RepScore +5.21)'}
       ]
-    }
+    };
   }
 
   render() {
@@ -18,16 +18,16 @@ export default class Topbar extends React.Component {
       <div className="container">
         <div className="row">
           {this.state.panels.map((panel) => {
-          return (
-            <div className="col-md-3">
-              <div className="panel panel-default">
-                <div className="panel-body">
-                  <h4>{panel.title}</h4>
-                  <span className="text-small">{panel.subtitle}</span>
+            return (
+              <div className="col-md-3">
+                <div className="panel panel-default">
+                  <div className="panel-body">
+                    <h4>{panel.title}</h4>
+                    <span className="text-small">{panel.subtitle}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
+            );
           })}
         </div>
       </div>

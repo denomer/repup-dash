@@ -37,7 +37,8 @@ module.exports = {
 
   resolve: {
     modulesDirectories: [
-      'node_modules'
+      'node_modules',
+      __dirname
     ]
   }
 }

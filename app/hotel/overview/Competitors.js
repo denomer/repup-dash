@@ -1,7 +1,7 @@
 import React from 'react';
-import {range} from '../../util';
+import {range} from 'lodash';
 
-export default class Competitors extends React.Component{
+export default class Competitors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,7 +15,7 @@ export default class Competitors extends React.Component{
             <h4>Top Rated Competitors</h4>
             <table className="table">
               <tbody>
-                {range(1,5).map(() => {
+                {range(1, 5).map(() => {
                   return (
                     <tr className="row">
                       <td width="33%" >Hotel 1</td>
@@ -37,5 +37,4 @@ export default class Competitors extends React.Component{
       </div>
     );
   }
-
 }

@@ -1,10 +1,13 @@
-import React from 'react'
-import {Router,Route,Link,IndexRoute} from 'react-router'
-import Container from './Container'
-import Dashboard from './dashboard/Dashboard'
-import ReviewsGraph from './reviews/ReviewsGraph'
-import AnalysisView from './competitiveAnalysis/AnalysisView'
-import Login from './auth/Login' 
+import React from 'react';
+import {Router, Route, IndexRoute} from 'react-router';
+
+import GroupContainer from './group/Container';
+import GroupOverview from './group/Overview';
+
+import HotelContainer from './hotel/Container';
+import HotelOverview from './hotel/Overview';
+
+import Login from './auth/Login';
 
 export default class AppRouter extends React.Component {
   constructor(props) {
@@ -15,15 +18,16 @@ export default class AppRouter extends React.Component {
   render() {
     return (
       <Router>
-        <Route path="/" component={Container}>
-          <IndexRoute component={Dashboard}/>
-          <Route path="review-graph" component={ReviewsGraph}/>
-          <Route path="competitive-analysis" component={AnalysisView}/>
-          <Route path="login" component={Login}/>
+        <Route path="/login" component={Login}/>
+
+        <Route path="/:hotelId" component={HotelContainer}>
+          <Route path="" component={HotelOverview} />
+        </Route>
+
+        <Route path="/" component={GroupContainer}>
+          <IndexRoute component={GroupOverview}/>
         </Route>
       </Router>
     );
-    
   }
 }
-

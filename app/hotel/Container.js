@@ -1,8 +1,6 @@
 import React from 'react';
-import Topbar from './Topbar';
-import LeftSidebar from './LeftSidebar';
-
-import Dashboard from './dashboard/Dashboard';
+import Topbar from './common/Topbar';
+import LeftSidebar from './common/LeftSidebar';
 
 export default class Container extends React.Component {
   constructor(props) {
@@ -17,7 +15,7 @@ export default class Container extends React.Component {
           <div className="col-md-12">
             <Topbar />
           </div>
-          
+
           <div className="panel panel-default">
             <div className="panel-body">
               <div className="row">
@@ -32,6 +30,10 @@ export default class Container extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
+
+Container.propTypes = {
+  children: React.PropTypes.node
+};
