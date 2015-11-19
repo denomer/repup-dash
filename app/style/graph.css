@@ -1,7 +1,7 @@
-.review-graph-holder{
+.review-graph{
 	position: relative;
 }
-.reivew-pieGraph{
+.review-neg-graph{
 	position: absolute;
 	top: 0;
 	right: 0;
