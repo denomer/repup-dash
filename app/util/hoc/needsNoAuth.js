@@ -13,8 +13,8 @@ export default function needsAuth(Component) {
     componentDidMount() {
       auth.isLoggedIn().then((isLoggedIn) => {
         console.log(isLoggedIn);
-        if (!isLoggedIn && isFunction(this.props.history.pushState)) {
-          this.props.history.pushState(null, '/login');
+        if (isLoggedIn && isFunction(this.props.history.pushState)) {
+          this.props.history.pushState(null, '/');
         }
       });
     }

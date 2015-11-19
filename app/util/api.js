@@ -3,12 +3,12 @@ import {isUndefined, merge} from 'lodash';
 
 const apiBase = 'http://manage.repup.me';
 
-export function api(method, url, options) {
+function api(method, url, options) {
   // instantiate options as an empty object literal
   options = isUndefined(options) ? {} : options;
 
   // do something with it when needed
-  // const token = options.token;
+  const token = options.token;
 
   merge(
     options,
@@ -19,7 +19,7 @@ export function api(method, url, options) {
       // prefix api_base to the url
       uri: url.indexOf('http') === 0 ? url : apiBase + url,
       // if the url starts with http, leave headers be
-      // other wise attach X-DeviceID: web header
+      // other wise attach token (when we get auth)
       headers: url.indexOf('http') === 0 ? {} : {},
       json: options.json ? options.json : true
     }
@@ -32,7 +32,11 @@ export function api(method, url, options) {
 
   // send multipart/form-data under the key 'formData' as a formData object
 
-  return new Promise((resolve, reject) => {
+  const requestId = {};
+
+  api.activeRequests.add(requestId);
+
+  const p = new Promise((resolve, reject) => {
     request(options, (err, res, body) => {
       if (err) {
         throw err;
@@ -45,7 +49,16 @@ export function api(method, url, options) {
       }
     });
   });
+
+  p.finally((data) => {
+    api.activeRequests.delete(requestId);
+    return data;
+  });
+
+  return p;
 }
+
+api.activeRequests = new Set();
 
 // attach shorthands for get, put, post, delete to api
 ['GET', 'PUT', 'POST', 'DELETE'].forEach((m) => {
@@ -53,3 +66,5 @@ export function api(method, url, options) {
     return api(m, url, options);
   };
 });
+
+export default api;

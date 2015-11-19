@@ -1,18 +1,11 @@
 import React from 'react';
 
+import needsAuth from 'app/util/hoc/needsAuth';
 import Overview from './Overview';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.props.history.pushState(null, '/login');
-    }, 5000);
-
-    console.log(this, this.props);
   }
 
   render() {
@@ -28,4 +21,4 @@ class Container extends React.Component {
   }
 }
 
-export default Container;
+export default needsAuth(Container);

@@ -1,6 +1,11 @@
 import React from 'react';
+import {isFunction} from 'lodash';
 
-export default class Login extends React.Component {
+import auth from 'app/util/auth';
+
+import needsNoAuth from 'app/util/hoc/needsNoAuth';
+
+class Login extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,11 +19,20 @@ export default class Login extends React.Component {
       ev.preventDefault();
     }
 
-    const data = {
+    auth.login({
       username: this.refs.username.value,
       password: this.refs.password.value
-    };
+    }).then((data) => {
+      if (isFunction(this.props.history.pushState)) {
+        this.props.history.pushState(null, '/');
+      }
 
+      return data;
+    }).catch((err) => {
+      console.log(err);
+      this.setState({hasErrors: true});
+      setTimeout(() => { this.setState({hasErrors: false}); }, 3000);
+    });
   }
 
   render() {
@@ -58,3 +72,5 @@ export default class Login extends React.Component {
     );
   }
 }
+
+export default needsNoAuth(Login);

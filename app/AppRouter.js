@@ -10,6 +10,8 @@ import HotelReviews from './hotel/Reviews';
 
 import Login from './auth/Login';
 
+import InWorksNotif from './InWorksNotif';
+
 export default class AppRouter extends React.Component {
   constructor(props) {
     super(props);
@@ -18,17 +20,20 @@ export default class AppRouter extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Route path="/login" component={Login}/>
+      <div>
+        <InWorksNotif />
+        <Router>
+          <Route path="/login" component={Login}/>
 
-        <Route path="/:hotelId" component={HotelContainer}>
+          <Route path="/:hotelId" component={HotelContainer}>
             <IndexRoute component={HotelOverview} />
-        </Route>
+          </Route>
 
-        <Route path="/" component={GroupContainer}>
-          <IndexRoute component={GroupOverview}/>
-        </Route>
-      </Router>
+          <Route path="/" component={GroupContainer}>
+            <IndexRoute component={GroupOverview}/>
+          </Route>
+        </Router>
+      </div>
     );
   }
 }

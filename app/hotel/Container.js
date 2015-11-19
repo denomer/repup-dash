@@ -1,8 +1,10 @@
 import React from 'react';
+
+import needsAuth from 'app/util/hoc/needsAuth';
 import Topbar from './common/Topbar';
 import LeftSidebar from './common/LeftSidebar';
 
-export default class Container extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -37,3 +39,5 @@ export default class Container extends React.Component {
 Container.propTypes = {
   children: React.PropTypes.node
 };
+
+export default needsAuth(Container);

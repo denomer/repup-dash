@@ -19,20 +19,33 @@
 }
 
 .numberCircle {
-    border-radius: 50%;
-    padding: 4px;
-    border: 2px solid #ccc;
-    text-align: center;
-	background: #fff;
-	font-size: 18px;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid #ccc;
+  text-align: center;
+  background: #fff;
+  font-size: 18px;
 }
 .numberCircle-danger{
-	color: red;
+  color: red;
 }
 .numberCircle-warning{
-	color: orange;
+  color: orange;
 }
 .numberCircle-success{
-	color: green;
+  color: green;
 }
 
+.in-works-marker {
+  position: fixed;
+  top: 10px;
+  width: 100px;
+  left: 50%;
+  padding-left: -50px;
+  z-index: 999;
+  text-align: center;
+}
+
+.in-works-marker > span {
+  margin: 10px;
+}
