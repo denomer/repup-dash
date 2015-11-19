@@ -33,6 +33,7 @@
     "react": "^0.14.2",
     "react-bootstrap": "^0.27.3",
     "react-chartjs": "^0.6.0",
-    "react-dom": "^0.14.2"
+    "react-dom": "^0.14.2",
+    "whatwg-fetch": "^0.10.1"
   }
 }
