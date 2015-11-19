@@ -1,7 +1,7 @@
 import React from 'react';
 import {findDOMNode} from 'react';
 
-export function dropdown(Component) {
+export default function dropdown(Component) {
   return class extends React.Component {
     constructor(props) {
       super(props);

@@ -1,4 +1,4 @@
-import fetch from 'whatwg-fetch';
+import api from './api';
 
 const auth = {
   login({username, password}) {
