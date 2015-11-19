@@ -17,3 +17,22 @@
   top: 0px;
   left: 320px;
 }
+
+.numberCircle {
+    border-radius: 50%;
+    padding: 4px;
+    border: 2px solid #ccc;
+    text-align: center;
+	background: #fff;
+	font-size: 18px;
+}
+.numberCircle-danger{
+	color: red;
+}
+.numberCircle-warning{
+	color: orange;
+}
+.numberCircle-success{
+	color: green;
+}
+
