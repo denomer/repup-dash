@@ -63,13 +63,19 @@ const hotels = {
     }
   },
 
-  clear() {
-    Array.from(this._hash.keys()).forEach((id) => {
-      cache.del(`${id}.overview`);
-      cache.del(`${id}.reviewStats`);
-      this._hash.delete(id);
-    });
+  clear(id) {
+    cache.del(`${id}.overview`);
+    cache.del(`${id}.reviewStats`);
+    this._hash.delete(id);
+    return this;
+  },
 
+  clearAll() {
+    return this.clearIds(pluck(auth.session.hotels, 'hotelId'));
+  },
+
+  clearIds(ids) {
+    ids.forEach((id) => this.clear(id));
     return this;
   },
 
@@ -103,5 +109,9 @@ const hotels = {
     }).then(() => result);
   }
 };
+
+auth.onLogout(() => {
+  hotels.clear();
+});
 
 export default hotels;

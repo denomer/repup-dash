@@ -1,4 +1,4 @@
-import 'assets/css/bootstrap.darkly.min.css';
+import 'assets/css/bootstrap.flatly.min.css';
 import 'assets/css/spacing-classes.css';
 import 'assets/css/main.css';
 

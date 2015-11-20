@@ -4,10 +4,28 @@ import needsAuth from 'app/util/hoc/needsAuth';
 import Topbar from './common/Topbar';
 import LeftSidebar from './common/LeftSidebar';
 
+import hotels from 'app/store/hotels';
+
 class Container extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      hotelLoaded: false,
+      overview: null,
+      reviewStats: []
+    };
+  }
+
+  componentWillMount() {
+    // const {hotelId} = this.props.routeParams;
+
+    // hotels.get(hotelId).then(({overview, reviewStats}) => {
+    //   this.setState({
+    //     hotelLoaded: true,
+    //     overview,
+    //     reviewStats
+    //   });
+    // });
   }
 
   render() {
@@ -20,7 +38,7 @@ class Container extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-2">
-            <LeftSidebar />
+            <LeftSidebar {...this.props.routeParams}/>
           </div>
           <div className="col-md-10">
             {this.props.children}

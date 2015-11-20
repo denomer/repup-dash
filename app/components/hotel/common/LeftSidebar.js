@@ -21,13 +21,13 @@ export default class LeftSidebar extends React.Component {
           </div>
           <div className="list-group">
             <ul className="nav nav-pills nav-stacked">
-              <li><Link to="/">
+              <li><Link to={`/${this.props.hotelId}`}>
                 <span className="glyphicon glyphicon-home"></span> Home
               </Link></li>
-              <li><Link to="/reviews">
+              <li><Link to={`${this.props.hotelId}/reviews`}>
                 <span className="glyphicon glyphicon-edit"></span> Reviews
               </Link></li>
-              <li><Link to="/competitive-analysis">
+              <li><Link to={`${this.props.hotelId}/competitive-analysis`}>
                 <span className="glyphicon glyphicon-equalizer"></span> Comp Analysis
               </Link></li>
               {/* <li><Link to="/filtered-reviews">

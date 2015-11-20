@@ -37,6 +37,9 @@ export const session = {
 export const auth = {
   session,
 
+  loginCallbacks: new Set(), // callbacks to run on login
+  logoutCallbacks: new Set(), // callbacks to run on logout
+
   login({username, password}) {
     return new Promise((resolve, reject) => {
       api.post('/RepUpEngine/authenticateClient.repup', {
@@ -58,17 +61,29 @@ export const auth = {
       ]);
     }).then(([client, hotels, overview]) => {
       session.set(client, hotels, overview, null);
+      Promise.all(this.loginCallbacks);
       return {client, hotels};
     });
   },
 
   logout() {
-    session.clear();
-    return Promise.resolve();
+    return Promise.all(this.logoutCallbacks).then(() => {
+      return session.clear();
+    });
   },
 
   isLoggedIn() {
     return Promise.resolve(session.client !== null && session.hotels.length > 0);
+  },
+
+  onLogin(callback) {
+    this.loginCallbacks.add(callback);
+    return this;
+  },
+
+  onLogout(callback) {
+    this.logoutCallbacks.add(callback);
+    return this;
   }
 };
 
