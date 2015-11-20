@@ -10,7 +10,7 @@ export default class Properties extends React.Component {
   }
 
   filteredHotels() {
-    return this.props.hotels.filter((hotel) => {
+    return this.props.account.hotels.filter((hotel) => {
       if (this.state.searchTerm.length > 0) {
         return hotel.hotelName.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) > -1;
       } else {

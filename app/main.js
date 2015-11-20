@@ -8,9 +8,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './AppRouter';
 
+import localStorageBuster from './util/localStorageBuster';
 import auth from './store/auth';
 
-auth.session.load();
+localStorageBuster('812eb25');
+
+auth.load();
 
 ReactDOM.render(
   <AppRouter />,

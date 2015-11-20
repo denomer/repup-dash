@@ -2,34 +2,22 @@ import api from 'app/util/api';
 import cache from 'app/util/cache';
 
 export const session = {
-  client: null,
-  hotels: [],
-  overview: [],
-  token: null,
+  clientId: null,
 
-  lifetime: 5 * 24 * 3600 * 1000, // 5 days in ms
+  _cacheLifetime: 5 * 24 * 3600 * 1000, // 5 days in ms
 
   load() {
-    this.client = cache.get('account.client');
-    this.hotels = cache.get('account.hotels', []);
-    this.overview = cache.get('account.overview', []);
-    this.token = cache.get('account.token');
+    this.clientId = cache.get('session.clientId');
     return this;
   },
 
-  set(client, hotels, overview, token) {
-    cache.set('account.client', client, this.lifetime);
-    cache.set('account.hotels', hotels, this.lifetime);
-    cache.set('account.overview', overview, this.lifetime);
-    cache.set('account.token', token, this.lifetime);
+  set({clientId}) {
+    cache.set('session.clientId', clientId, this._cacheLifetime);
     return this.load();
   },
 
   clear() {
-    cache.del('account.client');
-    cache.del('account.hotels');
-    cache.del('account.token');
-    cache.del('account.overview');
+    cache.del('session.clientId');
     return this.load();
   }
 };
@@ -37,8 +25,14 @@ export const session = {
 export const auth = {
   session,
 
+  loadCallbacks: new Set(),
   loginCallbacks: new Set(), // callbacks to run on login
   logoutCallbacks: new Set(), // callbacks to run on logout
+
+  load() {
+    auth.session.load();
+    Promise.all(this.loadCallbacks);
+  },
 
   login({username, password}) {
     return new Promise((resolve, reject) => {
@@ -54,15 +48,11 @@ export const auth = {
         reject(err);
       });
     }).then(({clientId}) => {
-      return Promise.all([
-        api.get('/RepUpEngine/getClientDetails.repup', {qs: {clientId}}),
-        api.get('/RepUpEngine/getClientProperties.repup', {qs: {clientId}}),
-        api.get(`/repup_dashboard_api/dashboard/hotelgroups/${clientId}`)
-      ]);
-    }).then(([client, hotels, overview]) => {
-      session.set(client, hotels, overview, null);
+      session.set({clientId});
+      return {clientId};
+    }).then(({clientId}) => {
       Promise.all(this.loginCallbacks);
-      return {client, hotels};
+      return {clientId};
     });
   },
 
@@ -73,7 +63,12 @@ export const auth = {
   },
 
   isLoggedIn() {
-    return Promise.resolve(session.client !== null && session.hotels.length > 0);
+    return Promise.resolve(session.clientId !== null);
+  },
+
+  onLoad(callback) {
+    this.loadCallbacks.add(callback);
+    return this;
   },
 
   onLogin(callback) {

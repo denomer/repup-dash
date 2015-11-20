@@ -26,7 +26,7 @@ export default function needsAuth(Component) {
       if (this.state.isLoggedIn) {
         return <span />;
       } else {
-        return <Component ref="node" {...this.props} {...this.state} auth={auth}/>;
+        return <Component ref="node" {...this.props} {...this.state}/>;
       }
     }
   };
