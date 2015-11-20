@@ -68,7 +68,7 @@ export function calculateBestProperty(hotels, ratingsOfHotels) {
     .filter(({hotelId}) => hotelId === maxRepScoreHotelRating.id)
     .reduce((hotel) => hotel);
 
-  return {hotel: maxHotel, score: maxRepScoreHotelRating.repScore};
+  return {hotel: maxHotel, score: Math.round(maxRepScoreHotelRating.repScore)};
 }
 
 export function calculateWorstProperty(hotels, ratingsOfHotels) {
@@ -82,5 +82,5 @@ export function calculateWorstProperty(hotels, ratingsOfHotels) {
     .filter(({hotelId}) => hotelId === minRepScoreHotelRating.id)
     .reduce((hotel) => hotel);
 
-  return {hotel: minHotel, score: minRepScoreHotelRating.repScore};
+  return {hotel: minHotel, score: Math.round(minRepScoreHotelRating.repScore)};
 }

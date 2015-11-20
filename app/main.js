@@ -11,7 +11,7 @@ import AppRouter from './AppRouter';
 import localStorageBuster from './util/localStorageBuster';
 import auth from './store/auth';
 
-localStorageBuster();
+localStorageBuster('812eb25');
 
 auth.load();
 

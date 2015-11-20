@@ -192,7 +192,7 @@ function WorstProperty({hotels, ratings}) {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <h4>Best Performing Property</h4>
+            <h4>Worst Performing Property</h4>
           </div>
         </div>
       </div>

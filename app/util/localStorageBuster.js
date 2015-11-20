@@ -6,7 +6,7 @@
 // For something which works, use a github commit id as key, if you know that
 // you changed how data is cached etc
 
-export function localStorageBuster(key) {
+export default function localStorageBuster(key) {
   if (localStorage.getItem(key) === key) {
     return;
   }
