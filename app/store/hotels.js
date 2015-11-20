@@ -13,6 +13,10 @@ const hotels = {
   },
 
   get(id) {
+    if (account.data === null) {
+      return account.load().then(() => this.get(id));
+    }
+
     if (this._hash.has(id)) {
       return Promise.resolve(this._hash.get(id));
     } else if (this._isHotelIdValid(id)) {
@@ -23,6 +27,10 @@ const hotels = {
   },
 
   load(id, months=7) {
+    if (account.data === null) {
+      return account.load().then(() => this.load(id, months));
+    }
+
     if (this._isHotelIdValid(id)) {
       const overview = cache.get(`${id}.overview`);
       const reviewStats = cache.get(`${id}.reviewStats`, []);

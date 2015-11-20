@@ -46,7 +46,6 @@ const account = {
   }
 };
 
-auth.onLogin(() => account.load());
 auth.onLogout(() => account.clear());
 
 export default account;
