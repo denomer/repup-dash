@@ -1,4 +1,38 @@
 export default {
+  scoreBasedData: {
+    labels: ["Hotel1", "Hotel2", "Hotel3", "Hotel4","Hotel4","Hotel4","Hotel4"],
+    datasets: [
+      {
+        label: "Hotel Compare Data",
+        fillColor: "rgba(220,220,220,0.5)",
+        strokeColor: "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data: [65, 59, 80, 81,65,85,69]
+      }
+    ]
+  },
+  reviewBasedData: {
+    labels: ["Hotel1", "Hotel2", "Hotel3", "Hotel4"],
+    datasets: [
+      {
+        label: "Hotel Review Based Data Positive",
+        fillColor: "rgba(0,255,0,0.3)",
+        strokeColor: "rgba(0,255,0,0.3)",
+        highlightFill: "rgba(0,255,0,0.3)",
+        highlightStroke: "rgba(0,255,0,0.3)",
+        data: [65, 59, 80, 81]
+      },
+      {
+        label: "Hotel Review Based Data Negative",
+        fillColor: "rgba(255,0,0,0.3)",
+        strokeColor: "rgba(255,0,0,0.3)",
+        highlightFill: "rgba(255,0,0,0.3)",
+        highlightStroke: "rgba(255,0,0,0.3)",
+        data: [30, 59, 70, 40]
+      }
+    ]
+  },
   competitiveAnalysis: [
     {
       "hotelName": "Hilton Garden Inn Gurgaon",
