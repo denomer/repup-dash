@@ -1,4 +1,4 @@
-import {isNumber, isArray, cloneDeep} from 'lodash';
+import {isNumber, cloneDeep} from 'lodash';
 
 const cache = {
   set(key, val, lifetime) {
