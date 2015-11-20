@@ -17,15 +17,15 @@ class Container extends React.Component {
   }
 
   componentWillMount() {
-    // const {hotelId} = this.props.routeParams;
+    const {hotelId} = this.props.routeParams;
 
-    // hotels.get(hotelId).then(({overview, reviewStats}) => {
-    //   this.setState({
-    //     hotelLoaded: true,
-    //     overview,
-    //     reviewStats
-    //   });
-    // });
+    hotels.get(hotelId).then(({overview, reviewStats}) => {
+      this.setState({
+        hotelLoaded: true,
+        overview,
+        reviewStats
+      });
+    });
   }
 
   render() {

@@ -18,7 +18,7 @@ export default class Overview extends React.Component {
         <div className="col-md-12">
           <div className="row">
             <div className="col-md-3">
-              <BrandScore panel={this.state.scoreInfo} {...this.props} />
+              <BrandScore {...this.props} />
             </div>
             <div className="col-md-3">
               <SocialMedia {...this.props} />
@@ -52,8 +52,8 @@ function BrandScore(props) {
         <div className="row">
           <div className="col-md-2">
             <h1>
-              <span className={scoreStyle(props.panel.score)}>
-                {props.panel.score}
+              <span className={scoreStyle(70)}>
+                {70}
               </span>
             </h1>
           </div>
@@ -65,7 +65,7 @@ function BrandScore(props) {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <i className={arrowStyle(props.panel.changed)}></i>{props.panel.changed}%
+                <i className={arrowStyle(5)}></i>{5}%
               </div>
             </div>
           </div>
