@@ -1,7 +1,7 @@
 import React from 'react';
 import {range} from 'lodash';
 
-import CatagoryScoresData from './CatagoryScoresData';
+import CatagoryScoresData from './data';
 
 export default class CatagoryStatsTab extends React.Component{
   constructor(props){
@@ -59,7 +59,8 @@ export default class CatagoryStatsTab extends React.Component{
                                     {cData.negativeReviews}%
                                   </div>
                                 </div>
-                                <span className="small">Score {cData.score} Reviews {cData.reviews}</span>
+                                <span> Score {cData.score} </span>
+                                <span> Reviews {cData.reviews} </span>
                               </td>
                               );
                           })}
