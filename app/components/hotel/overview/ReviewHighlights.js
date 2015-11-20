@@ -1,6 +1,6 @@
 import React from 'react';
-import {createElement} from 'react';
-import dropdown from 'app/util/hoc/dropdown';
+
+import {generateBarClass} from 'app/util/helpers';
 
 export default class ReviewHighlights extends React.Component {
   constructor(props) {
@@ -24,16 +24,6 @@ export default class ReviewHighlights extends React.Component {
   }
 
   render() {
-    const generateBarClass = (value) => {
-      if (value>=75) {
-        return 'progress-bar progress-bar-success';
-      } else if (value<75 && value>=60) {
-        return 'progress-bar progress-bar-warning';
-      } else {
-        return 'progress-bar progress-bar-danger';
-      }
-    };
-
     return (
       <div className="panel panel-default">
         <div className="panel-body panel-body-table">

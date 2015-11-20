@@ -17,18 +17,13 @@ class Container extends React.Component {
           <div className="col-md-12">
             <Topbar />
           </div>
-
-          <div className="panel panel-default">
-            <div className="panel-body">
-              <div className="row">
-                <div className="col-md-2">
-                  <LeftSidebar />
-                </div>
-                <div className="col-md-10">
-                  {this.props.children}
-                </div>
-              </div>
-            </div>
+        </div>
+        <div className="row">
+          <div className="col-md-2">
+            <LeftSidebar />
+          </div>
+          <div className="col-md-10">
+            {this.props.children}
           </div>
         </div>
       </div>

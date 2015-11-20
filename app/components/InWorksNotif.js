@@ -1,8 +1,7 @@
 import React from 'react';
-
 import {range} from 'lodash';
 
-import api from './util/api';
+import api from 'app/util/api';
 
 export default class InWorksNotif extends React.Component {
   constructor(props) {

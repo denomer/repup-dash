@@ -1,7 +1,7 @@
 import React from 'react';
 import {isFunction} from 'lodash';
 
-import auth from 'app/util/auth';
+import auth from 'app/store/auth';
 
 import needsNoAuth from 'app/util/hoc/needsNoAuth';
 
