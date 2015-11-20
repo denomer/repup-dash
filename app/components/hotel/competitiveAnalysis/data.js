@@ -33,150 +33,179 @@ export default {
       }
     ]
   },
-  competitiveAnalysis: [
+
+  catagoryScoresData: [
     {
-      "hotelName": "Hilton Garden Inn Gurgaon",
-      "hotelAddress": "Sector 50, Gurgaon 122002, India",
-      "tripRank": "21",
-      "tripPosChange": "na",
-      "tripCatagory": "207 Hotels in Gurgaon",
-      "tripTotalReviews": "356",
-      "tripPositiveReviews": "85",
-      "tripNegativeReviews": "10",
-      "tripNeutralReviews": "5",
-      "makeRank": "na",
-      "makePosChange": "na",
-      "makeTotalReviews": "na",
-      "makePositiveReviews": "na",
-      "makeNegativeReviews": "na",
-      "makeNeutralReviews": "na",
-      "bookingRank": "7.5",
-      "bookingPosChange": "na",
-      "bookingTotalReviews": "81",
-      "bookingPositiveReviews": "27",
-      "bookingNegativeReviews": "44",
-      "bookingNeutralReviews": "29",
-      "goibiboRank": "na",
-      "goibiboTotalReviews": "na",
-      "goibiboPosChange": "na",
-      "goibiboPositiveReviews": "na",
-      "goibiboNegativeReviews": "na",
-      "goibiboNeutralReviews": "na",
-      "expediaRank": "4.1",
-      "expediaTotalReviews": "50",
-      "expediaPosChange": "na",
-      "expediaPositiveReviews": "69",
-      "expediaNegativeReviews": "23",
-      "expediaNeutralReviews": "8",
-      "agodaRank": "na",
-      "agodaTotalReviews": "na",
-      "agodaPosChange": "na",
-      "agodaPositiveReviews": "na",
-      "agodaNegativeReviews": "na",
-      "agodaNeutralReviews": "na",
-      "repSocre": "61.66",
-      "location": "66",
-      "rooms": "72",
-      "services": "79",
-      "facilities": "62",
-      "food": "69",
-      "internet": "60"
+      hotelName:'Galaxy',
+      catagories:[
+        {
+          catagoryName:'Washrooms',
+          reviews:'6',
+          score:'42',
+          positiveReviews:'25',
+          neutralReviews:'50',
+          negativeReviews:'25'
+        }
+      ]
+    }
+  ],
+
+  otaData: [
+    {
+      reviewPlatform:"TripAdvisor",
+      data:[
+        {
+          hotelName:'Galaxy',
+          reviews:'5',
+          positiveReviews:'52',
+          neutralReviews:'28',
+          negativeReviews:'20'
+        },
+        {
+          hotelName:'Star',
+          reviews:'28',
+          positiveReviews:'26',
+          neutralReviews:'4',
+          negativeReviews:'70'
+        },
+        {
+          hotelName:'Moon',
+          reviews:'55',
+          positiveReviews:'82',
+          neutralReviews:'14',
+          negativeReviews:'4'
+        }
+      ]
     },
     {
-      "hotelName": "Crowne Plaza Hotel Gurgaon",
-      "hotelAddress": "Site 2 Sector 29 | opposite Signature Tower, Gurgaon 122001, India",
-      "tripRank": "14",
-      "tripPosChange": "na",
-      "tripCatagory": "207 Hotels in Gurgaon",
-      "tripTotalReviews": "564",
-      "tripPositiveReviews": "84",
-      "tripNegativeReviews": "12",
-      "tripNeutralReviews": "4",
-      "makeRank": "na",
-      "makePosChange": "na",
-      "makeTotalReviews": "na",
-      "makePositiveReviews": "0",
-      "makeNegativeReviews": "100",
-      "makeNeutralReviews": "0",
-      "bookingRank": "8.4",
-      "bookingPosChange": "na",
-      "bookingTotalReviews": "30",
-      "bookingPositiveReviews": "57",
-      "bookingNegativeReviews": "14",
-      "bookingNeutralReviews": "29",
-      "goibiboRank": "na",
-      "goibiboTotalReviews": "na",
-      "goibiboPosChange": "na",
-      "goibiboPositiveReviews": "na",
-      "goibiboNegativeReviews": "na",
-      "goibiboNeutralReviews": "na",
-      "expediaRank": "4.5",
-      "expediaTotalReviews": "44",
-      "expediaPosChange": "na",
-      "expediaPositiveReviews": "75",
-      "expediaNegativeReviews": "10",
-      "expediaNeutralReviews": "15",
-      "agodaRank": "8.5",
-      "agodaTotalReviews": "30",
-      "agodaPosChange": "na",
-      "agodaPositiveReviews": "75",
-      "agodaNegativeReviews": "12",
-      "agodaNeutralReviews": "13",
-      "repSocre": "62.91",
-      "location": "63",
-      "rooms": "80",
-      "services": "78",
-      "facilities": "62",
-      "food": "75",
-      "internet": "59"
+      reviewPlatform:"Booking",
+      data:[
+        {
+          hotelName:'Galaxy',
+          reviews:'5',
+          positiveReviews:'52',
+          neutralReviews:'28',
+          negativeReviews:'20'
+        },
+        {
+          hotelName:'Star',
+          reviews:'28',
+          positiveReviews:'26',
+          neutralReviews:'4',
+          negativeReviews:'70'
+        },
+        {
+          hotelName:'Moon',
+          reviews:'55',
+          positiveReviews:'82',
+          neutralReviews:'14',
+          negativeReviews:'4'
+        }
+      ]
     },
     {
-      "hotelName": "Lemon Tree Premier, Leisure Valley, Gurgaon",
-      "hotelAddress": "48, City Center, Sector 29, Gurgaon 122002, India",
-      "tripRank": "23",
-      "tripPosChange": "na",
-      "tripCatagory": "207 Hotels in Gurgaon",
-      "tripTotalReviews": "477",
-      "tripPositiveReviews": "86",
-      "tripNegativeReviews": "7",
-      "tripNeutralReviews": "7",
-      "makeRank": "na",
-      "makePosChange": "na",
-      "makeTotalReviews": "na",
-      "makePositiveReviews": "na",
-      "makeNegativeReviews": "na",
-      "makeNeutralReviews": "na",
-      "bookingRank": "7.2",
-      "bookingPosChange": "na",
-      "bookingTotalReviews": "86",
-      "bookingPositiveReviews": "25",
-      "bookingNegativeReviews": "45",
-      "bookingNeutralReviews": "30",
-      "goibiboRank": "4.0",
-      "goibiboTotalReviews": "41",
-      "goibiboPosChange": "na",
-      "goibiboPositiveReviews": "60",
-      "goibiboNegativeReviews": "40",
-      "goibiboNeutralReviews": "0",
-      "expediaRank": "3.8",
-      "expediaTotalReviews": "53",
-      "expediaPosChange": "na",
-      "expediaPositiveReviews": "62",
-      "expediaNegativeReviews": "20",
-      "expediaNeutralReviews": "18",
-      "agodaRank": "na",
-      "agodaTotalReviews": "na",
-      "agodaPosChange": "na",
-      "agodaPositiveReviews": "na",
-      "agodaNegativeReviews": "na",
-      "agodaNeutralReviews": "na",
-      "repSocre": "62.18",
-      "location": "65",
-      "rooms": "73",
-      "services": "81",
-      "facilities": "60",
-      "food": "77",
-      "internet": "61"
+      reviewPlatform:"Agoda",
+      data:[
+        {
+          hotelName:'Galaxy',
+          reviews:'5',
+          positiveReviews:'52',
+          neutralReviews:'28',
+          negativeReviews:'20'
+        },
+        {
+          hotelName:'Star',
+          reviews:'28',
+          positiveReviews:'26',
+          neutralReviews:'4',
+          negativeReviews:'70'
+        },
+        {
+          hotelName:'Moon',
+          reviews:'55',
+          positiveReviews:'82',
+          neutralReviews:'14',
+          negativeReviews:'4'
+        }
+      ]
+    },
+    {
+      reviewPlatform:"MakeMyTrip",
+      data:[
+        {
+          hotelName:'Galaxy',
+          reviews:'5',
+          positiveReviews:'52',
+          neutralReviews:'28',
+          negativeReviews:'20'
+        },
+        {
+          hotelName:'Star',
+          reviews:'28',
+          positiveReviews:'26',
+          neutralReviews:'4',
+          negativeReviews:'70'
+        },
+        {
+          hotelName:'Moon',
+          reviews:'55',
+          positiveReviews:'82',
+          neutralReviews:'14',
+          negativeReviews:'4'
+        }
+      ]
+    },
+    {
+      reviewPlatform:"Expedia",
+      data:[
+        {
+          hotelName:'Galaxy',
+          reviews:'5',
+          positiveReviews:'52',
+          neutralReviews:'28',
+          negativeReviews:'20'
+        },
+        {
+          hotelName:'Star',
+          reviews:'28',
+          positiveReviews:'26',
+          neutralReviews:'4',
+          negativeReviews:'70'
+        },
+        {
+          hotelName:'Moon',
+          reviews:'55',
+          positiveReviews:'82',
+          neutralReviews:'14',
+          negativeReviews:'4'
+        }
+      ]
+    },
+    {
+      reviewPlatform:"Goibibo",
+      data:[
+        {
+          hotelName:'Galaxy',
+          reviews:'5',
+          positiveReviews:'52',
+          neutralReviews:'28',
+          negativeReviews:'20'
+        },
+        {
+          hotelName:'Star',
+          reviews:'28',
+          positiveReviews:'26',
+          neutralReviews:'4',
+          negativeReviews:'70'
+        },
+        {
+          hotelName:'Moon',
+          reviews:'55',
+          positiveReviews:'82',
+          neutralReviews:'14',
+          negativeReviews:'4'
+        }
+      ]
     }
   ]
 };
