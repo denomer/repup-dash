@@ -1,8 +1,7 @@
-import {pluck} from 'lodash';
-
 import api from 'app/util/api';
 import cache from 'app/util/cache';
 import auth from './auth';
+import account from './account';
 
 const hotels = {
   _hash: new Map(),
@@ -10,7 +9,7 @@ const hotels = {
   _cacheLifetime: 24 * 3600 * 1000, // 1 day
 
   _isHotelIdValid(id) {
-    return pluck(auth.session.hotels, 'hotelId').indexOf(id) > -1;
+    return account.data.hotels.map(({hotelId}) => hotelId).indexOf(id) > -1;
   },
 
   get(id) {
@@ -71,7 +70,7 @@ const hotels = {
   },
 
   clearAll() {
-    return this.clearIds(pluck(auth.session.hotels, 'hotelId'));
+    return this.clearIds(account.data.hotels.map(({hotelId}) => hotelId));
   },
 
   clearIds(ids) {
@@ -80,7 +79,7 @@ const hotels = {
   },
 
   getAll() {
-    return this.getIds(pluck(auth.session.hotels, 'hotelId'));
+    return this.getIds(account.data.hotels(({hotelId}) => hotelId));
   },
 
   getIds(ids) {
@@ -95,7 +94,7 @@ const hotels = {
   },
 
   loadAll(months=7) {
-    return this.loadIds(pluck(auth.session.hotels, 'hotelId'), months);
+    return this.loadIds(account.data.hotels(({hotelId}) => hotelId), months);
   },
 
   loadIds(ids, months=7) {
@@ -110,8 +109,6 @@ const hotels = {
   }
 };
 
-auth.onLogout(() => {
-  hotels.clear();
-});
+auth.onLogout(() => hotels.clear());
 
 export default hotels;

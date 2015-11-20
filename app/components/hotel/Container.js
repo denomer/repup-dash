@@ -11,46 +11,41 @@ class Container extends React.Component {
     super(props);
     this.state = {
       hotelLoaded: false,
-      overview: null,
-      reviewStats: []
+      hotel: null
     };
   }
 
   componentWillMount() {
     const {hotelId} = this.props.routeParams;
 
-    hotels.get(hotelId).then(({overview, reviewStats}) => {
-      this.setState({
-        hotelLoaded: true,
-        overview,
-        reviewStats
-      });
+    hotels.get(hotelId).then((hotel) => {
+      this.setState({hotelLoaded: true, hotel});
     });
   }
 
   render() {
-    return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-12">
-            <Topbar />
+    if (this.state.hotelLoaded) {
+      return (
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-12">
+              <Topbar />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-2">
+              <LeftSidebar {...this.props.routeParams}/>
+            </div>
+            <div className="col-md-10">
+              {this.props.children}
+            </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-2">
-            <LeftSidebar {...this.props.routeParams}/>
-          </div>
-          <div className="col-md-10">
-            {this.props.children}
-          </div>
-        </div>
-      </div>
-    );
+      );
+    } else {
+      return <div/>;
+    }
   }
 }
-
-Container.propTypes = {
-  children: React.PropTypes.node
-};
 
 export default needsAuth(Container);

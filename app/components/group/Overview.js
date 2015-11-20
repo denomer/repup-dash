@@ -1,15 +1,18 @@
 import React from 'react';
 
 import {scoreStyle, arrowStyle} from 'app/util/helpers';
+import {
+  calculateBrandRepScore,
+  calculateSocialMediaShares,
+  calculateReviewsData,
+  calculateBestProperty,
+  calculateWorstProperty
+} from './calculations';
 
 export default class Overview extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      scoreInfo: {
-        title: 'Score', score: '70', changed: '5'
-      }
-    };
+    this.state = {};
   }
 
   render() {
@@ -18,25 +21,25 @@ export default class Overview extends React.Component {
         <div className="col-md-12">
           <div className="row">
             <div className="col-md-3">
-              <BrandScore {...this.props} />
+              <BrandScore {...this.props.account} />
             </div>
             <div className="col-md-3">
-              <SocialMedia {...this.props} />
+              <SocialMedia {...this.props.account} />
             </div>
             <div className="col-md-3">
-              <PositiveReviews {...this.props} />
+              <PositiveReviews {...this.props.account} />
             </div>
             <div className="col-md-3">
-              <NegativeReviews {...this.props} />
+              <NegativeReviews {...this.props.account} />
             </div>
           </div>
 
           <div className="row">
             <div className="col-md-3">
-              <BestProperty {...this.props} />
+              <BestProperty {...this.props.account} />
             </div>
             <div className="col-md-3">
-              <WorstProperty {...this.props} />
+              <WorstProperty {...this.props.account} />
             </div>
           </div>
         </div>
@@ -45,29 +48,27 @@ export default class Overview extends React.Component {
   }
 }
 
-function BrandScore(props) {
+function BrandScore({client, ratings}) {
+  const repScore = calculateBrandRepScore(ratings);
+
   return (
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{minHeight: '11em'}}>
       <div className="panel-body">
         <div className="row">
           <div className="col-md-2">
             <h1>
-              <span className={scoreStyle(70)}>
-                {70}
+              <span className={scoreStyle(repScore)}>
+                {repScore}
               </span>
             </h1>
           </div>
           <div className="col-md-9 col-md-offset-1">
-            <div className="row">
-              <div className="col-md-12">
-                <h3>{props.client.clientName}</h3>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <i className={arrowStyle(5)}></i>{5}%
-              </div>
-            </div>
+            <h3>{client.clientName}</h3>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <h4>Brand Rep Score</h4>
           </div>
         </div>
       </div>
@@ -75,13 +76,15 @@ function BrandScore(props) {
   );
 }
 
-function SocialMedia(props) {
+function SocialMedia({ratings}) {
+  const socialMediaShares = calculateSocialMediaShares(ratings);
+
   return (
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{minHeight: '11em'}}>
       <div className="panel-body">
         <div className="row">
           <div className="col-md-6">
-            <h2>432</h2>
+            <h2>{socialMediaShares}</h2>
           </div>
           <div className="col-md-6">
             <h3><i className={arrowStyle(10)}></i>{10}%</h3>
@@ -97,16 +100,18 @@ function SocialMedia(props) {
   );
 }
 
-function PositiveReviews(props) {
+function PositiveReviews({ratings}) {
+  const {total, change} = calculateReviewsData(ratings, 'positive');
+
   return (
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{minHeight: '11em'}}>
       <div className="panel-body">
         <div className="row">
           <div className="col-md-6">
-            <h2>68</h2>
+            <h2>{total}</h2>
           </div>
           <div className="col-md-6">
-            <h3><i className={arrowStyle(10)}></i>{10}%</h3>
+            <h3><i className={arrowStyle(change)}></i>{change}%</h3>
           </div>
         </div>
         <div className="row">
@@ -119,68 +124,18 @@ function PositiveReviews(props) {
   );
 }
 
-function BrandScore(props) {
-  return (
-    <div className="panel panel-default">
-      <div className="panel-body">
-        <div className="row">
-          <div className="col-md-2">
-            <h1>
-              <span className={scoreStyle(props.panel.score)}>
-                {props.panel.score}
-              </span>
-            </h1>
-          </div>
-          <div className="col-md-9 col-md-offset-1">
-            <div className="row">
-              <div className="col-md-12">
-                <h3>{props.client.clientName}</h3>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <i className={arrowStyle(props.panel.changed)}></i>{props.panel.changed}%
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+function NegativeReviews({ratings}) {
+  const {total, change} = calculateReviewsData(ratings, 'negative');
 
-function SocialMedia(props) {
   return (
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{minHeight: '11em'}}>
       <div className="panel-body">
         <div className="row">
           <div className="col-md-6">
-            <h2>432</h2>
+            <h2>{total}</h2>
           </div>
           <div className="col-md-6">
-            <h3><i className={arrowStyle(10)}></i>{10}%</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-12">
-            <h4>Social Media Shares</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function NegativeReviews(props) {
-  return (
-    <div className="panel panel-default">
-      <div className="panel-body">
-        <div className="row">
-          <div className="col-md-6">
-            <h2>16</h2>
-          </div>
-          <div className="col-md-6">
-            <h3><i className={arrowStyle(-15)}></i>{-15}%</h3>
+            <h3><i className={arrowStyle(change)}></i>{change}%</h3>
           </div>
         </div>
         <div className="row">
@@ -193,19 +148,19 @@ function NegativeReviews(props) {
   );
 }
 
-function BestProperty(props) {
+function BestProperty({hotels, ratings}) {
+  const {hotel, score} = calculateBestProperty(hotels, ratings);
+
   return (
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{minHeight: '11em'}}>
       <div className="panel-body">
         <div className="row">
           <div className="col-md-9">
-            <h3>Lemon Tree Jaipur</h3>
+            <h3>{hotel.hotelName}</h3>
           </div>
           <div className="col-md-3">
             <h3>
-              <span className={scoreStyle(78)}>
-                {78}
-              </span>
+              <span className={scoreStyle(score)}>{score}</span>
             </h3>
           </div>
         </div>
@@ -219,19 +174,19 @@ function BestProperty(props) {
   );
 }
 
-function WorstProperty(props) {
+function WorstProperty({hotels, ratings}) {
+  const {hotel, score} = calculateWorstProperty(hotels, ratings);
+
   return (
-    <div className="panel panel-default">
+    <div className="panel panel-default" style={{minHeight: '11em'}}>
       <div className="panel-body">
         <div className="row">
           <div className="col-md-9">
-            <h3>Lemon Tree Gurgaon</h3>
+            <h3>{hotel.hotelName}</h3>
           </div>
           <div className="col-md-3">
             <h3>
-              <span className={scoreStyle(42)}>
-                {42}
-              </span>
+              <span className={scoreStyle(score)}>{score}</span>
             </h3>
           </div>
         </div>
