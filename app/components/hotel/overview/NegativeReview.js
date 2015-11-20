@@ -7,9 +7,9 @@ export default class NegativeReview extends React.Component {
     super(props);
     this.state = {
       negtiveReview: [
-        {title: 'Washrooms', reviewCount: 4,changed:'-5'},
-        {title: 'Restaurant', reviewCount: 13,changed:'2'},
-        {title: 'Internet', reviewCount: 5,changed:'-7'}
+        {title: 'Washrooms', reviewCount: 4, changed: '-5'},
+        {title: 'Restaurant', reviewCount: 13, changed: '2'},
+        {title: 'Internet', reviewCount: 5, changed: '-7'}
       ]
     };
   }
@@ -55,10 +55,10 @@ export default class NegativeReview extends React.Component {
   }
 }
 
-function arrowStyleNegativeReviews(value){
-  if(value>0)
+function arrowStyleNegativeReviews(value) {
+  if (value>0) {
     return 'glyphicon glyphicon-arrow-up text-danger';
-  else
+  } else {
     return 'glyphicon glyphicon-arrow-down text-success';
-  
+  }
 }

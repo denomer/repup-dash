@@ -1,5 +1,5 @@
 import React from 'react';
-import {findDOMNode} from 'react';
+import {findDOMNode} from 'react-dom';
 
 export default function dropdown(Component) {
   return class extends React.Component {

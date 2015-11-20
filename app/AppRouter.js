@@ -1,14 +1,17 @@
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
 
-import GroupContainer from './group/Container';
-import GroupOverview from './group/Overview';
+import InWorksNotif from './components/InWorksNotif';
 
-import HotelContainer from './hotel/Container';
-import HotelOverview from './hotel/Overview';
-import HotelReviews from './hotel/Reviews';
+import Login from './components/auth/Login';
 
-import Login from './auth/Login';
+import GroupContainer from './components/group/Container';
+import GroupOverview from './components/group/Overview';
+
+import HotelContainer from './components/hotel/Container';
+import HotelOverview from './components/hotel/Overview';
+import HotelReviews from './components/hotel/Reviews';
+import HotelCompetitiveAnalysis from './components/hotel/CompetitiveAnalysis';
 
 export default class AppRouter extends React.Component {
   constructor(props) {
@@ -18,17 +21,22 @@ export default class AppRouter extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Route path="/login" component={Login}/>
+      <div>
+        <InWorksNotif />
+        <Router onUpdate={() => window.scrollTo(0, 0)}>
+          <Route path="/login" component={Login}/>
 
-        <Route path="/:hotelId" component={HotelContainer}>
+          <Route path="/:hotelId" component={HotelContainer}>
             <IndexRoute component={HotelOverview} />
-        </Route>
+            <Route path="reviews" component={HotelReviews}/>
+            <Route path="competitive-analysis" component={HotelCompetitiveAnalysis}/>
+          </Route>
 
-        <Route path="/" component={GroupContainer}>
-          <IndexRoute component={GroupOverview}/>
-        </Route>
-      </Router>
+          <Route path="/" component={GroupContainer}>
+            <IndexRoute component={GroupOverview}/>
+          </Route>
+        </Router>
+      </div>
     );
   }
 }

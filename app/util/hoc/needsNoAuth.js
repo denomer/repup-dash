@@ -8,7 +8,7 @@ export default function needsAuth(Component) {
     constructor(props) {
       super(props);
       this.state = {
-        isLoggedIn: false
+        isLoggedIn: true
       };
     }
 
@@ -16,17 +16,17 @@ export default function needsAuth(Component) {
       auth.isLoggedIn().then((isLoggedIn) => {
         this.setState({isLoggedIn});
 
-        if (!isLoggedIn && isFunction(this.props.history.pushState)) {
-          this.props.history.pushState(null, '/login');
+        if (isLoggedIn && isFunction(this.props.history.pushState)) {
+          this.props.history.pushState(null, '/');
         }
       });
     }
 
     render() {
       if (this.state.isLoggedIn) {
-        return <Component ref="node" {...this.props} {...this.state} auth={auth}/>;
-      } else {
         return <span />;
+      } else {
+        return <Component ref="node" {...this.props} {...this.state} auth={auth}/>;
       }
     }
   };
