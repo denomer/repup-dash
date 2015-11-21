@@ -29,21 +29,23 @@ class Container extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-              <Topbar />
+              <Topbar hotel={this.state.hotel}/>
             </div>
           </div>
           <div className="row">
             <div className="col-md-2">
-              <LeftSidebar {...this.props.routeParams}/>
+              <LeftSidebar {...this.props.routeParams} hotel={this.state.hotel}/>
             </div>
             <div className="col-md-10">
-              {this.props.children}
+              {this.props.children && React.cloneElement(this.props.children,{
+                hotel:this.state.hotel                
+              })} 
             </div>
           </div>
         </div>
       );
     } else {
-      return <div/>;
+      return <div />;
     }
   }
 }

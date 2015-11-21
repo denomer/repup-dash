@@ -10,7 +10,7 @@ const account = {
   set({client, hotels, ratings}) {
     this.data = {client, hotels, ratings};
     cache.set('account.data', this.data);
-    return this.data;
+    return this;
   },
 
   get() {
@@ -34,7 +34,8 @@ const account = {
         api.get('/RepUpEngine/getClientProperties.repup', {qs: {clientId}}),
         api.get(`/repup_dashboard_api/dashboard/hotelgroups/${clientId}`)
       ]).then(([client, hotels, ratings]) => {
-        return this.set({client, hotels, ratings});
+        this.set({client, hotels, ratings});
+        return this.data;
       });
     }
   },

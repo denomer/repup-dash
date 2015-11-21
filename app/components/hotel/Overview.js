@@ -3,6 +3,7 @@ import Ota from './overview/Ota';
 import Competitors from './overview/Competitors';
 import ReviewHighlights from './overview/ReviewHighlights';
 import NegativeReview from './overview/NegativeReview';
+import CommonModal from './common/CommonModal'
 
 export default class Dashboard extends React.Component {
   constructor(props) {

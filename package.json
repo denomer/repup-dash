@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack-dev-server --debug --devtool sourcemap --hot --inline --port 8000 --content-base www/",
+    "serve": "webpack-dev-server --debug --devtool sourcemap --hot --inline --port 5000 --content-base www/",
     "watch": "webpack --watch"
   },
   "author": "",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.5",
+    "boron": "^0.1.2",
     "browser-request": "^0.3.3",
     "chart.js": "^1.0.2",
     "lodash": "^3.10.1",
